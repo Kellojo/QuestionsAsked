@@ -1,0 +1,14 @@
+<mvc:View
+	controllerName="com.questionsAsked.controller.login"
+	xmlns="sap.m"
+    xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+
+        <Page showHeader="false">
+            <content>
+                <Text text="Test"/>
+            </content>
+        </Page>
+
+</mvc:View>

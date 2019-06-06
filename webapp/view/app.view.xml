@@ -1,0 +1,21 @@
+<mvc:View
+	controllerName="com.questionsAsked.controller.app"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    height="100%"
+    width="100%"
+    id="idAppView">
+
+    <html:div>
+        
+        <App id="idApp" height="100%">
+            <pages></pages>
+        </App>
+
+        <VBox id="idErrorMessageContainer" class="questionsAsked-errorMessageContainer"/>
+    </html:div>
+
+</mvc:View>

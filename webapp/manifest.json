@@ -1,0 +1,55 @@
+{
+
+    "sap.ui5": {
+
+        "models": {
+            "userModel": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "device": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.questionsAsked.i18n.i18n"
+                }
+            }
+        },
+        
+        "rootView": {
+            "viewName": "com.questionsAsked.view.app",
+            "type": "XML",
+            "async": true
+        },
+
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewPath": "com.questionsAsked.view",
+                "viewType": "XML",
+                "async": true,
+                "transition": "slide",
+                "controlId": "idApp",
+                "controlAggregation": "pages",
+                "bypassed": {
+                    "target": "notFound"
+                }
+            },
+
+            "routes": [
+                {
+                    "name": "login",
+                    "pattern": "login",
+                    "target": "login"
+                }
+            ],
+
+            "targets": {
+                "login": {
+                    "viewName": "login"
+                }
+            }
+        }
+    }
+}

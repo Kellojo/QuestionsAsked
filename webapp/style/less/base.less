@@ -1,0 +1,279 @@
+
+//Colors
+@color-glossary: #D7803B;
+@color-grey: #666;
+@color-lightGrey: #f2f2f2;
+@color-success: #8cc905;
+@color-error: #ee3100;
+@color-link: #0070b1;
+@color-contentBackground: white;
+@color-HaederBackground: white;
+
+@font-size-small: 0.7rem;
+@font-size-heading-1: 1.5rem;
+
+@smallMargin: 0.25rem;
+@defaultMargin: 1rem;
+@mediumMargin: 1rem;
+
+@defaultPagePadding: 2rem;
+@defaultBorderRadius: 5px;
+
+
+
+
+
+.sapMListNoDataText {
+    color: @color-grey;
+}
+
+.sapMLabelRequired:before {
+    margin-right: 0.1rem;
+}
+
+.sapMInputBaseContentWrapperSuccess {
+    border-color: @color-success !important;
+}
+
+.sapMInputBaseContentWrapperError {
+    border-color: @color-error !important;
+}
+
+.sapMPullDown {
+    background-color: transparent !important;
+}
+
+
+.glossary-centeredPanel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .sapMPanelContent {
+        padding: 0.625rem 1rem 0.5rem 1rem;
+    }
+
+    .sapMNav {
+        min-width:  15% !important;
+        max-width: 400px;
+        height: 350px !important;
+
+        .passwordLabel {
+            margin-top: 0.35rem;
+        }
+
+        .forgotPasswordLink {
+            margin-top: 0.25rem;
+            color: @color-grey;
+        }
+
+        .submitButtonContainer {
+            align-items: center;
+            display: flex;
+            margin-top: 0.25rem;
+
+            .sapMFlexItem:last-child {
+                margin-left: auto;
+            }
+        }
+
+    }
+
+    
+}
+
+.glossary-errorMessageContainer {
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 5.5rem;
+
+    .sapMMsgStrip {
+        margin-top: 0.25rem;
+        width: 100%
+    }
+}
+
+.glossary-overview {
+
+    .sapMPanelContent:first-child {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .glossary-contentPanel {
+
+        .sapMPanelContent {
+            padding: 0rem;
+            
+            .sapMScrollContScroll {
+                margin: @defaultPagePadding;
+
+                .glossary-listHeader, .glossary-overviewList {
+                    border: 1px solid @color-lightGrey;
+                }
+            }
+        }
+
+        .glossary-listTitleContainer {
+            margin-bottom: 2rem;
+            margin-left: 2rem;
+
+            .glossary-listTitle {
+                font-size: 1.5rem;
+            }
+            .glossary-listSubTitle {
+                color: darkgray;
+            }
+        }
+
+        .glossary-listHeader {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background-color: @color-HaederBackground;
+            border-top-left-radius: @defaultBorderRadius;
+            border-top-right-radius: @defaultBorderRadius;
+
+                flex-grow: 0;
+                flex-shrink: 0;
+
+                height: 3rem !important;
+                padding: 0rem 2 * @defaultMargin !important;
+
+                .sapMBarChild.sapMSF.sapMTBShrinkItem {
+                    max-width: 250px;
+                }
+
+                .sapMComboBox {
+                    margin-left: 0px !important;
+                }
+
+                >.sapMBarChild:last-child {
+                    margin-right: 0px !important;
+                }
+        }
+
+        .glossary-overviewList {
+            flex-grow: 1;
+            flex-shrink: 1;
+            height: calc(100% - 3rem);      //has to be adapted to fix overflow out of window glitch
+
+            .glossary-listItem {
+                padding: 0 @defaultMargin;
+
+                .heading {
+                    min-width: 25%;
+                    max-width: 25%;
+                }
+
+                .wordContainer {
+                    width: 100%;
+
+                    .sapMFlexItem:first-child, .word {
+                        max-width: 100%;
+                    }
+                }
+
+                .editIcon {
+                    height: 0;
+                    transition: opacity 0.25s ease;
+                    opacity: 0; 
+                    margin-left: 0.5rem;
+                }
+
+                .lastModifiedDate {
+                    font-size: 0.75rem;
+                }
+
+                .description {
+                    margin-left: 2rem;
+                    margin-right: 1rem;
+                    text-align: justify !important;
+                }
+
+                &:hover {
+                    .editIcon {
+                        cursor: pointer;
+                        height: auto;
+                        opacity: 1;
+                        display: block;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+.glossary-dialog {
+    .sapMDialogSection {
+        height: 100% !important;
+    }
+}
+
+.sapMApp .sapMPage {
+    height: calc(~"100% - 40px") !important;
+}
+
+html {
+    overflow: hidden;
+}
+
+.sap-phone {
+
+    .glossary-dialog {
+        height: 100% !important;
+        width: 100% !important;
+        max-height: calc(100% - 5rem) !important;
+        max-width: 100% !important;
+        border-radius: 0px;
+    }
+
+    .glossary-overview .glossary-contentPanel {
+
+        .sapMScrollContScroll {
+            margin: 0;
+        }
+
+        .glossary-listHeader {
+            padding: 0rem @defaultMargin !important;
+        }
+
+        .glossary-listItem {
+            padding: 0;
+
+            .heading {
+                max-width: 100% !important;
+            }
+
+            .glossary-listHeader {
+                padding: 0rem 0.675rem !important;
+            }
+
+            .sapMHBox {
+                margin-right: @mediumMargin;
+            }
+
+            .editIcon {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.glossary-userDialog {
+
+    .glossary-userInfo {
+        .sapMLabel {
+            font-size: @font-size-small;
+        }
+
+        border-bottom: 1px solid @color-lightGrey;
+        margin-bottom: 1rem;
+    }
+
+}
